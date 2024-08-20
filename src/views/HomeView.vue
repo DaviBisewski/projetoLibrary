@@ -109,13 +109,44 @@
             </div>
           </div>
         </div>
+        <div class="roupas">
+          <div class="imgRoupa">
+            <img src="../assets/icon.webp" alt="" />
+          </div>
+          <div class="sale">
+            <p>R$ {{ sale }}</p>
+          </div>
+          <div class="bottom">
+            <div class="btnSaibaMais">
+              <ion-icon name="enter-outline"></ion-icon>
+              <a href="#">Saiba Mais</a>
+            </div>
+            <div class="carrinho">
+              <button><ion-icon name="cart-outline"></ion-icon></button>
+            </div>
+          </div>
+        </div>
+        <div class="roupas">
+          <div class="imgRoupa">
+            <img src="../assets/icon.webp" alt="" />
+          </div>
+          <div class="sale">
+            <p>R$ {{ sale }}</p>
+          </div>
+          <div class="bottom">
+            <div class="btnSaibaMais">
+              <ion-icon name="enter-outline"></ion-icon>
+              <a href="#">Saiba Mais</a>
+            </div>
+            <div class="carrinho">
+              <button><ion-icon name="cart-outline"></ion-icon></button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </template>
   <script>
-  export default {
-    name: "Home",
-  };
   </script>
   <style scoped>
   #shop .title {
@@ -148,11 +179,11 @@
     align-items: center;
     flex-wrap: wrap;
     padding: 40px 150px 75px;
-    gap: 200px;
+    gap: 25px;
   }
   
   #shop .catalogo .roupas {
-    width: 300px;
+    width: 350px;
     height: 450px;
     border-radius: 12px;
     background-color: #e7e7e7;
@@ -164,8 +195,11 @@
   
   #shop .catalogo .roupas .imgRoupa {
     display: flex;
+    width: 100%;
     justify-content: center;
     align-items: center;
+    padding-bottom: 80px;
+    border-bottom: 1.5px solid #0d0d0d;
   }
   
   #shop .catalogo .roupas .imgRoupa img {
