@@ -17,7 +17,7 @@
                   <ul>
                      <li class="list">
                         <span class="indicator"></span>
-                        <router-link to="/biografia">
+                        <router-link to="/familia">
                            <span class="icon"><ion-icon name="ribbon-outline"></ion-icon></span>
                            <span class="text">Biografia</span>
                         </router-link>
@@ -47,9 +47,6 @@
       </header>
    </template>
    <script>
-   export default {
-       name: 'Header'
-   }
    </script>
    <style scoped>
    /*header*/
