@@ -13,7 +13,7 @@
     <div v-if="componenteAtivo === 'RegFamView'" class="fixed-container">
       <RegFamView />
     </div>
-    
+
     <footer id="bottom">
       <div class="prin-info">
         <button class="button"><ion-icon name="logo-instagram"></ion-icon></button>
@@ -22,7 +22,7 @@
           <button class="button"><ion-icon name="settings-outline"></ion-icon></button>
           <div class="boxForms">
             <div class="title">
-              <h2>Registros</h2>
+              <h2 class="titulo">Registros</h2>
             </div>
             <div class="mainForms">
               <button class="boxForm" @click="componenteAtivo = 'BookRegView'">Registrar Livros</button>
@@ -81,7 +81,8 @@ export default {
 
 <style scoped>
 #app {
-  position: relative; /* Faz com que a posição absoluta funcione dentro do app */
+  position: relative;
+  /* Faz com que a posição absoluta funcione dentro do app */
 }
 
 .fixed-container {
@@ -89,13 +90,16 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%; /* Ajuste conforme necessário */
-  max-width: 600px; /* Ajuste conforme necessário */
+  width: 80%;
+  /* Ajuste conforme necessário */
+  max-width: 600px;
+  /* Ajuste conforme necessário */
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 8px;
   padding: 20px;
-  z-index: 1000; /* Garante que a área flutuante esteja acima de outros conteúdos */
+  z-index: 1000;
+  /* Garante que a área flutuante esteja acima de outros conteúdos */
 }
 
 #bottom {
@@ -119,9 +123,7 @@ export default {
   user-select: none;
 }
 
-.prin-social h4:hover {
-  color: var(--rosaclaro-color);
-}
+
 
 .prin-info {
   display: flex;
@@ -133,14 +135,7 @@ export default {
   width: 100%;
 }
 
-.prin-info:hover {
-  color: var(--rosaclaro-color);
-  user-select: none;
-}
 
-#bottom .prin-info a:hover ion-icon {
-  color: var(--bright-color);
-}
 
 .settings-container {
   position: relative;
@@ -148,7 +143,8 @@ export default {
 }
 
 .boxForms {
-  display: none; /* Inicialmente escondido */
+  display: none;
+  /* Inicialmente escondido */
   position: absolute;
   top: 0px;
   right: -205px;
@@ -156,13 +152,14 @@ export default {
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 100;
   transition: all .5s ease-in;
 }
 
 .settings-container:hover .boxForms {
-  display: block; /* Mostra a caixa de formulário quando o botão é hover */
+  display: block;
+  /* Mostra a caixa de formulário quando o botão é hover */
 }
 
 .boxForms .boxForm {
@@ -170,25 +167,27 @@ export default {
   margin: 10px 0;
 }
 
-.button{
+.button {
+  padding: 10px 15px;
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 23px;
+}
+
+button {
   padding: 10px 15px;
   background-color: #e91e63;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 20px;
 }
-button {
-padding: 10px 15px;
-  background-color: #e91e63;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
+
 button:hover {
-  background-color: rgb(233, 132, 149);
+  background-color: #fc3a7b;
 }
 
 hr {
@@ -198,4 +197,7 @@ hr {
   height: 2px;
   background-color: #e91e63;
 }
-</style>
+
+.title h2 {
+  color: #e91e63;
+}</style>

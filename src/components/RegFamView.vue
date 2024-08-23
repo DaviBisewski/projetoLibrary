@@ -1,5 +1,5 @@
-<template>
-    <section>
+  <template>
+    <section v-if="visivel">
       <div class="book-form">
         <button class="close-button" @click="fecharComponente">✖</button>
         <h2>Registrar Família</h2>
@@ -18,19 +18,19 @@
       </div>
     </section>
   </template>
-  
+
   <script>
   import { ref } from 'vue';
-  
+
   export default {
     name: 'RegFamView',
     setup() {
       const visivel = ref(true);
-  
+
       const fecharComponente = () => {
         visivel.value = false;
       };
-  
+
       return {
         visivel,
         fecharComponente
@@ -38,7 +38,7 @@
     }
   }
   </script>
-  
+
   <style scoped>
   .book-form {
     position: relative;
@@ -53,31 +53,31 @@
     animation: spin 2s ease;
     animation-iteration-count: 1;
   }
-  
+
   .book-form h2 {
     color: #000000;
     justify-content: center;
     display: flex;
     align-items: center;
   }
-  
+
   .book-form div {
     margin-bottom: 30px;
   }
-  
+
   .book-form label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
   }
-  
+
   .book-form input {
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
     color: #000000;
   }
-  
+
   button {
     padding: 10px 15px;
     background-color: #e91e63;
@@ -86,11 +86,11 @@
     border-radius: 5px;
     cursor: pointer;
   }
-  
+
   button:hover {
     background-color: rgb(233, 132, 149);
   }
-  
+
   hr {
     width: 280px;
     margin: 0 auto;
@@ -98,7 +98,7 @@
     height: 2px;
     background-color: #e91e63;
   }
-  
+
   .close-button {
     position: absolute;
     top: 10px;
@@ -116,19 +116,18 @@
     font-size: 16px;
     font-weight: bold;
   }
-  
+
   .close-button:hover {
     background-color: rgb(233, 132, 149);
   }
-  
+
   @keyframes spin {
     to {
       transform: scale(1) translate(0px) rotate(0deg) translateY(0);
     }
-  
+
     from {
       transform: scale(250) translate(2000px) rotate(720deg) translateY(1100px);
     }
   }
   </style>
-  

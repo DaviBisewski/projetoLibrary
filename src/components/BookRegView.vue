@@ -1,37 +1,59 @@
 <template>
-  <section>
-  <div class="book-form">
-    <h2>Cadastro de Livro</h2>
-    <hr>
-    <form >
-      <div>
-        <label for="codigo">Código:</label>
-        <input type="text"  id="codigo" required />
-      </div>
-      <div>
-        <label for="titulo">Título:</label>
-        <input type="text"  id="titulo" required />
-      </div>
-      <div>
-        <label for="autor">Autor:</label>
-        <input type="text"  id="autor" required />
-      </div>
-      <div>
-        <label for="categoria">Categoria:</label>
-        <input type="text"  id="categoria" required />
-      </div>
-      <div>
-        <label for="localizacao">Localização:</label>
-        <input type="text"  id="localizacao" required />
-      </div>
-      <button type="submit">Cadastrar</button>
-    </form>
-  </div>
-</section>
+  <section v-if="visivel">
+    <div class="book-form">
+      <button class="close-button" @click="fecharComponente">✖</button>
+      <h2>Cadastro de Livro</h2>
+      <hr />
+      <form>
+        <div>
+          <label for="codigo">Código:</label>
+          <input type="text" id="codigo" required />
+        </div>
+        <div>
+          <label for="titulo">Título:</label>
+          <input type="text" id="titulo" required />
+        </div>
+        <div>
+          <label for="autor">Autor:</label>
+          <input type="text" id="autor" required />
+        </div>
+        <div>
+          <label for="categoria">Categoria:</label>
+          <input type="text" id="categoria" required />
+        </div>
+        <div>
+          <label for="localizacao">Localização:</label>
+          <input type="text" id="localizacao" required />
+        </div>
+        <button type="submit">Cadastrar</button>
+      </form>
+    </div>
+  </section>
 </template>
-<style scoped>
 
+<script>
+import { ref } from 'vue';
+
+export default {
+  name: 'BookForm',
+  setup() {
+    const visivel = ref(true);
+
+    const fecharComponente = () => {
+      visivel.value = false;
+    };
+
+    return {
+      visivel,
+      fecharComponente
+    };
+  }
+}
+</script>
+
+<style scoped>
 .book-form {
+  position: relative;
   width: 600px;
   height: 100%;
   margin: 0 auto;
@@ -40,7 +62,7 @@
   background-color: #E7E7E7;
   color: #000000;
   border: 1px solid #000000;
-    animation: spin 2s ease;
+  animation: spin 2s ease;
   animation-iteration-count: 1;
 }
 
@@ -80,10 +102,33 @@ button {
 button:hover {
   background-color: rgb(233, 132, 149);
 }
-hr{
+
+hr {
   width: 280px;
   margin: 0 auto;
   border-color: #e91e63;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #e91e63;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.close-button:hover {
+  background-color: rgb(233, 132, 149);
 }
 
 @keyframes spin {
