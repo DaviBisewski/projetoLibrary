@@ -1,5 +1,4 @@
 <template>
-    <!-- header start -->
     <header id="header">
         <div class="redes-sociais">
             <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
@@ -43,7 +42,7 @@
 </template>
 
 <script>
-import LogInView from './LogInView.vue'; // Certifique-se de que o caminho esteja correto
+import LogInView from './LogInView.vue';
 
 export default {
     name: 'Header',
@@ -64,8 +63,6 @@ export default {
 </script>
 
 <style scoped>
-/* Seus estilos existentes aqui... */
-
 #header {
     font-family: 'Raleway', sans-serif;
     line-height: 1.5;
@@ -354,37 +351,36 @@ export default {
 }
 
 .fixed-container {
-  display: none;
-  /* Inicialmente escondido */
-  position: fixed;
-  top: 0;
-  right: 0;
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 100;
-  transition: all .5s ease-in;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    transition: all .5s ease-in;
 }
 
 .fixed-container.show {
-  display: block; /* Mostrar quando o componente estiver ativo */
+    display: block;
 }
 
 .nav-button {
-  background-color: #e7e7e7;
-  color: #0D0D0D;
-  border: none;
-  border-radius: 4px;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 0.75em;
-  font-weight: 500;
+    background-color: #e7e7e7;
+    color: #0D0D0D;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 0.75em;
+    font-weight: 500;
 }
 
 .nav-button:hover {
-  background-color: #d1d1d1;
-  color: #fff;
+    background-color: #d1d1d1;
+    color: #fff;
 }
 </style>

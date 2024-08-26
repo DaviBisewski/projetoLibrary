@@ -38,13 +38,13 @@
   </transition>
 
   <transition name="fade">
-    <RegFamView v-if="!visivel" @fechar="trocarParaClientes"/>
+    <RegFamView v-if="!visivel" @fechar="trocarParaClientes" />
   </transition>
 </template>
 
 <script>
 import { ref } from 'vue';
-import RegFamView from './RegFamView.vue'; // Ajuste o caminho se necessário
+import RegFamView from './RegFamView.vue';
 
 export default {
   name: 'CadastroClientesView',
@@ -74,20 +74,21 @@ export default {
     };
   }
 }
-</script> 
+</script>
 
 <style scoped>
-/* Transition classes */
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity 0.5s ease;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
 }
 
-/* Existing styles */
 .book-form {
-  position: relative; /* Adicionado para que o botão de fechar fique no lugar certo */
+  position: relative;
   width: 600px;
   height: 100%;
   margin: 0 auto;
@@ -131,7 +132,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-right: 10px; 
+  margin-right: 10px;
 }
 
 button:hover {
@@ -168,12 +169,12 @@ hr {
 }
 
 @keyframes spin {
-  to {
-    transform: scale(1) translate(0px) rotate(0deg) translateY(0);
+  from {
+    transform: scale(40) translate(200px) rotate(500deg) translateY(1000px);
   }
 
-  from {
-    transform: scale(250) translate(2000px) rotate(720deg) translateY(1100px);
+  to {
+    transform: scale(1) translate(0) rotate(0) translateY(0);
   }
 }
 </style>

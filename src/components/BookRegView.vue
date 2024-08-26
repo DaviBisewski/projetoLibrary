@@ -43,10 +43,7 @@ export default {
       visivel.value = false;
     };
 
-    return {
-      visivel,
-      fecharComponente
-    };
+    return { visivel, fecharComponente };
   }
 }
 </script>
@@ -55,22 +52,18 @@ export default {
 .book-form {
   position: relative;
   width: 600px;
-  height: 100%;
   margin: 0 auto;
   padding: 20px;
   border-radius: 10px;
   background-color: #E7E7E7;
-  color: #000000;
-  border: 1px solid #000000;
-  animation: spin 2s ease;
-  animation-iteration-count: 1;
+  color: #000;
+  border: 1px solid #000;
+  animation: spin 2s ease 1;
 }
 
 .book-form h2 {
-  color: #000000;
-  justify-content: center;
-  display: flex;
-  align-items: center;
+  color: #000;
+  text-align: center;
 }
 
 .book-form div {
@@ -87,7 +80,7 @@ export default {
   width: 100%;
   padding: 8px;
   box-sizing: border-box;
-  color: #000000;
+  color: #000;
 }
 
 button {
@@ -124,7 +117,6 @@ hr {
   justify-content: center;
   cursor: pointer;
   font-size: 16px;
-  font-weight: bold;
 }
 
 .close-button:hover {
@@ -132,12 +124,12 @@ hr {
 }
 
 @keyframes spin {
-  to {
-    transform: scale(1) translate(0px) rotate(0deg) translateY(0);
+  from {
+    transform: scale(40) translate(200px) rotate(500deg) translateY(1000px);
   }
 
-  from {
-    transform: scale(250) translate(2000px) rotate(720deg) translateY(1100px);
+  to {
+    transform: scale(1) translate(0) rotate(0) translateY(0);
   }
 }
 </style>

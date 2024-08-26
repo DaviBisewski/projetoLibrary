@@ -44,7 +44,7 @@ export default {
   name: 'LoanForm',
   data() {
     return {
-      visivel: true, // Adiciona a propriedade de visibilidade
+      visivel: true,
       codigoLivro: '',
       data: '',
       nomeCliente: '',
@@ -62,7 +62,7 @@ export default {
       window.print();
     },
     fecharComponente() {
-      this.visivel = false; // Método para fechar o componente
+      this.visivel = false;
     }
   }
 };
@@ -173,12 +173,13 @@ hr {
 }
 
 @keyframes spin {
-  to {
-    transform: scale(1) translate(0px) rotate(0deg) translateY(0);
+  from {
+    transform: scale(40) translate(200px) rotate(500deg) translateY(1000px);
   }
 
-  from {
-    transform: scale(250) translate(2000px) rotate(720deg) translateY(1100px);
+  to {
+    transform: scale(1) translate(0) rotate(0) translateY(0);
   }
 }
+
 </style>

@@ -1,6 +1,5 @@
 <template>
   <div id="app" class="compForm">
-    <!-- Área onde os componentes são exibidos -->
     <div v-if="componenteAtivo === 'BookRegView'" class="fixed-container">
       <BookRegView />
     </div>
@@ -16,8 +15,12 @@
 
     <footer id="bottom">
       <div class="prin-info">
-        <button class="button"><ion-icon name="logo-instagram"></ion-icon></button>
+        <a href="https://www.instagram.com/grupolivrariascuritiba/" target="_blank">
+          <button class="button"><ion-icon name="logo-instagram"></ion-icon></button>
+        </a>
+        <a href="https://is.gd/cK92I3" target="_blank">
         <button class="button"><ion-icon name="construct-outline"></ion-icon></button>
+      </a>
         <div class="settings-container">
           <button class="button"><ion-icon name="settings-outline"></ion-icon></button>
           <div class="boxForms">
@@ -82,7 +85,6 @@ export default {
 <style scoped>
 #app {
   position: relative;
-  /* Faz com que a posição absoluta funcione dentro do app */
 }
 
 .fixed-container {
@@ -91,15 +93,12 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 80%;
-  /* Ajuste conforme necessário */
   max-width: 600px;
-  /* Ajuste conforme necessário */
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 8px;
   padding: 20px;
   z-index: 1000;
-  /* Garante que a área flutuante esteja acima de outros conteúdos */
 }
 
 #bottom {
@@ -121,6 +120,7 @@ export default {
   color: var(--bright-color);
   transition: 0.55s;
   user-select: none;
+  margin-left: -12px;
 }
 
 
@@ -144,10 +144,9 @@ export default {
 
 .boxForms {
   display: none;
-  /* Inicialmente escondido */
   position: absolute;
   top: 0px;
-  right: -205px;
+  right: -150px;
   background-color: #f8f8f8;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -155,16 +154,17 @@ export default {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 100;
   transition: all .5s ease-in;
+  height: 300px;
 }
 
 .settings-container:hover .boxForms {
   display: block;
-  /* Mostra a caixa de formulário quando o botão é hover */
 }
 
 .boxForms .boxForm {
   display: block;
   margin: 10px 0;
+  width: 110px;
 }
 
 .button {
@@ -175,6 +175,7 @@ export default {
   border-radius: 25px;
   cursor: pointer;
   font-size: 23px;
+  margin-right: 27px;
 }
 
 button {
@@ -200,4 +201,5 @@ hr {
 
 .title h2 {
   color: #e91e63;
-}</style>
+}
+</style>
