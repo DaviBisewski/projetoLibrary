@@ -17,7 +17,7 @@
                   <ul>
                      <li class="list">
                         <span class="indicator"></span>
-                        <router-link to="/biografia">
+                        <router-link to="/shop">
                            <span class="icon"><ion-icon name="ribbon-outline"></ion-icon></span>
                            <span class="text">Biografia</span>
                         </router-link>
