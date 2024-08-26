@@ -23,7 +23,7 @@
                             </router-link>
                         </li>
                         <li class="list">
-                            <button @click="toggleComponent" class="nav-button">Log In</button>
+                            <button @click="toggleComponent" class="nav-button">Login</button>
                         </li>
                         <li class="list">
                             <span class="indicator"></span>
