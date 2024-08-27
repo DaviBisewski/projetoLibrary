@@ -83,7 +83,7 @@ export default {
 #header .redes-sociais {
     position: absolute;
     right: 100px;
-    top: 60px;
+    top: 70px;
     display: flex;
     gap: 20px;
     z-index: 100;
@@ -95,7 +95,7 @@ export default {
     justify-content: center;
     padding: 13px;
     border-radius: 50%;
-    background-color: var(--azulnaval-color);
+    background-color: #e91e63 ;
     color: #e7e7e7;
     transition: all 0.5s ease;
 }
@@ -286,15 +286,13 @@ export default {
 .fixed-container {
     display: none;
     position: fixed;
-    top: 0;
-    right: 0;
-    background-color: #f8f8f8;
-    border: 1px solid #ddd;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 100;
-    transition: all .5s ease-in;
+    transition: all 0.5s ease-in;
 }
 
 .fixed-container.show {
