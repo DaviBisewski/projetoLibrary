@@ -1,9 +1,27 @@
-<script setup>
-</script>
 
+<script>
+import { ref } from 'vue';
+
+export default {
+  name: 'FixedScreen',
+  setup() {
+    const visivel = ref(true);
+
+    const fecharComponente = () => {
+      visivel.value = false;
+    };
+
+    return {
+      visivel,
+      fecharComponente
+    };
+  }
+}
+</script>
 <template>
-    <section id="fixedScreen">
+    <section id="fixedScreen"  v-if="visivel">
         <div class="mainBook">
+            <button class="close-button" @click="fecharComponente">✖</button>
             <div class="boxImg">
                 <img src="../assets/icon.webp" alt="" />
             </div>
@@ -59,6 +77,11 @@
     flex-direction: column;
     gap: 40px;
     padding: 50px;
+    background-color: #fff;
+    border: 1px solid #0d0d0d;
+    border-radius: 12px;
+    animation: spin 2s ease;
+    animation-iteration-count: 1;
 }
 
 #fixedScreen .mainBook {
@@ -72,7 +95,6 @@
 #fixedScreen .mainBook .boxImg img{
     width: 300px;
     height: 400px;
-    border: 1px solid #0d0d0d;
 }
 
 #fixedScreen .mainBook .boxInfo {
@@ -153,5 +175,38 @@
     background-color: #e7e7e7;
     text-align: justify;
     border-radius: 10px;
+}
+
+
+@keyframes spin {
+  from {
+    transform: scale(40) translate(200px) rotate(500deg) translateY(1000px);
+  }
+
+  to {
+    transform: scale(1) translate(0) rotate(0) translateY(0);
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #e91e63;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.close-button:hover {
+  background-color: rgb(233, 132, 149);
 }
 </style>
