@@ -58,6 +58,7 @@
 </template>
 
 <script>
+
 import { ref } from 'vue';
 import BookRegView from './BookRegView.vue';
 import LoanView from './LoanView.vue';
@@ -80,6 +81,7 @@ export default {
     };
   }
 }
+
 </script>
 
 <style scoped>
