@@ -1,63 +1,64 @@
 
-<script>
-import { ref } from 'vue';
-
-export default {
-  name: 'FixedScreen',
-  setup() {
-    const visivel = ref(true);
-
-    const fecharComponente = () => {
-      visivel.value = false;
-    };
-
-    return {
-      visivel,
-      fecharComponente
-    };
-  }
-}
-</script>
 <template>
-    <section id="fixedScreen"  v-if="visivel">
-        <div class="mainBook">
-            <button class="close-button" @click="fecharComponente">✖</button>
-            <div class="boxImg">
-                <img src="../assets/icon.webp" alt="" />
-            </div>
-            <div class="boxInfo">
-                <div class="boxTitles">
-                    <div class="title">
-                        <h1>Titulo do Livro</h1>
-                    </div>
-                    <div class="subtitle">
-                        <h3>Autora:</h3>
-                    </div>
-                </div>
-                <div class="bookInfos">
-                    <p>Paginas:</p>
-                    <p>Editora:</p>
-                    <p>Edição:</p>
-                    <p>Idioma</p>
-                    <p>Codigo</p>
-                </div>
-                <div class="buttons">
-                    <button>Emprestar</button>
-                    <button>Reservar</button>
-                </div>
-            </div>
+    <section id="fixedScreen" v-if="visivel">
+      <div class="mainBook">
+        <button class="close-button" @click="fecharComponente">✖</button>
+        <div class="boxImg">
+          <img src="../assets/icon.webp" alt="" />
         </div>
-        <div class="mainDesc">
+        <div class="boxInfo">
+          <div class="boxTitles">
             <div class="title">
-                <h2>Descrição:</h2>
+              <h1>Titulo do Livro</h1>
             </div>
-            <div class="boxText">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim quis, vero tenetur at porro ad aut fuga impedit quisquam laboriosam, consectetur officia, rem quae rerum illo placeat necessitatibus. Illo, distinctio? Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, sunt asperiores facere quis consectetur expedita voluptas maiores, provident excepturi minima ipsum in praesentium error omnis qui quas! Quis, adipisci maxime! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt amet assumenda fuga mollitia atque cum odio? Tenetur exercitationem, dignissimos in praesentium qui, voluptas itaque, reprehenderit esse consectetur officia dolores facilis!</p>
+            <div class="subtitle">
+              <h3>Autora:</h3>
             </div>
-
+          </div>
+          <div class="bookInfos">
+            <p>Paginas:</p>
+            <p>Editora:</p>
+            <p>Edição:</p>
+            <p>Idioma:</p>
+            <p>Codigo:</p>
+          </div>
+          <div class="buttons">
+            <button>Emprestar</button>
+            <button>Reservar</button>
+          </div>
         </div>
+      </div>
+      <div class="mainDesc">
+        <div class="title">
+          <h2>Descrição:</h2>
+        </div>
+        <div class="boxText">
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit...</p>
+        </div>
+      </div>
     </section>
-</template>
+  </template>
+  
+  <script>
+  import { ref } from 'vue';
+  
+  export default {
+    name: 'FixedScreen',
+    setup(props, { emit }) {
+      const visivel = ref(true);
+  
+      const fecharComponente = () => {
+        visivel.value = false;
+        emit('close');
+      };
+  
+      return {
+        visivel,
+        fecharComponente
+      };
+    }
+  }
+  </script>
 
 <style scoped>
 * {
