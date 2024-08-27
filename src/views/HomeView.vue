@@ -6,6 +6,10 @@
         <h1 class="banner-title">ACERVO</h1>
       </div>
 
+      <div class="search-container">
+        <input type="text" placeholder="Pesquisar..." v-model="searchQuery" />
+      </div>
+
       <div class="sub-title">
         <h3>{{ resultados }} Resultados Exibidos</h3>
         <hr class="sub-title-line" />
@@ -61,6 +65,7 @@ export default {
       componenteAtivo: false,
       resultados: 12,
       email: '',
+      searchQuery: '',
       itens: [
         { id: 1, name: 'Livro A', hover: false },
         { id: 2, name: 'Livro B', hover: false },
@@ -282,7 +287,7 @@ export default {
 
 .newsletter-container {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -311,5 +316,22 @@ export default {
 
 .newsletter-container button:hover {
   background-color: #d81b60;
+}
+
+.search-container {
+  margin-right: 30px;
+  width: 100%;
+  padding: 20px 50px;
+}
+
+.search-container input {
+  position: absolute;
+  right: 100px;
+  margin-top: 80px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 250px;
+  
 }
 </style>
