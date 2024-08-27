@@ -1,9 +1,9 @@
 <template>
     <header id="header">
         <div class="redes-sociais">
-            <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
-            <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
-            <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+            <a href="https://www.instagram.com/grupolivrariascuritiba/" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
+            <a href="https://is.gd/cK92I3" target="_blank"><ion-icon name="mail-outline"></ion-icon></a>
+            <a href="https://api.whatsapp.com/send/?phone=554133305191" target="_blank"><ion-icon name="call-outline"></ion-icon></a>
         </div>
         <div class="container">
             <div class="header-main">
@@ -16,19 +16,23 @@
                     <ul>
                         <li class="list">
                             <span class="indicator"></span>
-                            <router-link to="/biografia">
-                                <span class="icon"><ion-icon name="ribbon-outline"></ion-icon></span>
-                                <span class="text">Biografia</span>
+                            <router-link to="/FamiliaView.vue">
+                                <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                                <span class="text">Família</span>
                             </router-link>
                         </li>
                         <li class="list">
-                            <button @click="toggleComponent" class="nav-button">Login</button>
+                            <span class="login"></span>
+                            <button @click="toggleComponent" class="nav-button">
+                                <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                                <span class="text">Login</span>
+                            </button>
                         </li>
                         <li class="list">
                             <span class="indicator"></span>
-                            <router-link to="/carrinho">
-                                <span class="icon"><ion-icon name="cart-outline"></ion-icon></span>
-                                <span class="text">Carrinho</span>
+                            <router-link to="/EmprestimosView.vue">
+                                <span class="icon"><ion-icon name="book-outline"></ion-icon></span>
+                                <span class="text">Empréstimos</span>
                             </router-link>
                         </li>
                     </ul>
@@ -69,30 +73,31 @@ export default {
     font-weight: 400;
     width: 100%;
     position: relative;
-    left: 0;
     top: 10px;
     z-index: 99;
     padding: 15px;
+    border-bottom: 2px solid #ddd;
+    height: 190px;
 }
 
 #header .redes-sociais {
-    position: relative;
-    right: 10px;
-    width: 100%;
+    position: absolute;
+    right: 100px;
+    top: 60px;
     display: flex;
-    justify-content: end;
-    gap: 7.5px;
+    gap: 20px;
+    z-index: 100;
 }
 
 #header .redes-sociais a {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 6.5px;
+    padding: 13px;
     border-radius: 50%;
     background-color: var(--azulnaval-color);
     color: #e7e7e7;
-    transition: all.5s ease;
+    transition: all 0.5s ease;
 }
 
 #header .redes-sociais a:hover {
@@ -104,17 +109,19 @@ export default {
 .header-main {
     background-color: var(--bright-color);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 10px 0;
     border-radius: 4px;
+    position: relative;
 }
 
 #logo {
-    padding-top: 10px;
     width: 75px;
     text-decoration: none;
     color: var(--dark-color);
+    position: absolute;
+    left: 10%;
 }
 
 .titulo {
@@ -122,13 +129,9 @@ export default {
     align-items: center;
 }
 
-#header .logo {
-    padding: 0 15px;
-}
-
 .nav {
+    top: 40px;
     height: 70px;
-    background-color: #e7e7e7;
     position: relative;
     display: flex;
     justify-content: center;
@@ -140,7 +143,7 @@ export default {
 
 .nav ul {
     display: flex;
-    gap: 20px;
+    gap: 40px;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -148,7 +151,6 @@ export default {
 
 .nav ul .list {
     position: relative;
-    list-style: none;
     width: 70px;
     height: 70px;
     z-index: 1;
@@ -172,10 +174,8 @@ export default {
 
 .nav ul li a .icon,
 .nav-button .icon {
-    position: relative;
-    display: block;
     line-height: 75px;
-    font-size: 1.5rem;
+    font-size: 2rem; /* Aumenta o tamanho dos ícones */
     text-align: center;
     transition: .5s;
     color: #0D0D0D;
@@ -189,7 +189,6 @@ export default {
 
 .nav ul li a .text,
 .nav-button .text {
-    position: absolute;
     color: #0D0D0D;
     font-weight: 500;
     font-size: .75em;
@@ -203,6 +202,7 @@ export default {
 .nav-button:hover .text {
     opacity: 1;
     transform: translateY(10px);
+    font-size: 1rem; /* Aumenta o tamanho da fonte ao passar o mouse */
 }
 
 .indicator {
@@ -221,31 +221,87 @@ export default {
     opacity: 1;
 }
 
-.indicator::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: -22px;
-    width: 20px;
-    height: 20px;
-    background-color: transparent;
-    border-top-right-radius: 20px;
-    box-shadow: 0 -10px 0 0 #fff;
-}
-
+.indicator::before,
 .indicator::after {
     content: '';
     position: absolute;
-    top: 50%;
-    right: -22px;
     width: 20px;
     height: 20px;
     background-color: transparent;
-    border-top-left-radius: 20px;
+    border-radius: 50%;
     box-shadow: 0 -10px 0 0 #fff;
 }
 
-@media(max-width: 991px) {
+.indicator::before {
+    top: 50%;
+    left: -22px;
+    border-top-right-radius: 20px;
+}
+
+.indicator::after {
+    top: 50%;
+    right: -22px;
+    border-top-left-radius: 20px;
+}
+
+.login {
+    position: absolute;
+    top: -50%;
+    width: 70px;
+    height: 70px;
+    background-color: #e91e63;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    transition: all .5s ease-in-out;
+    opacity: 0;
+}
+
+.list:hover .login {
+    opacity: 1;
+}
+
+.login::before,
+.login::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 0 -10px 0 0 #fff;
+}
+
+.login::before {
+    top: 50%;
+    left: -22px;
+    border-top-right-radius: 20px;
+}
+
+.login::after {
+    top: 50%;
+    right: -22px;
+    border-top-left-radius: 20px;
+}
+
+.fixed-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    transition: all .5s ease-in;
+}
+
+.fixed-container.show {
+    display: block;
+}
+
+@media (max-width: 991px) {
     .nav {
         height: auto;
         width: auto;
@@ -277,15 +333,16 @@ export default {
     }
 
     #header .redes-sociais {
-        width: 100%;
+        position: absolute;
+        right: 50px;
+        top: 15px;
         display: flex;
-        justify-content: start;
         gap: 7.5px;
+        z-index: 100;
     }
-
 }
 
-@media (max-width:740px) {
+@media (max-width: 740px) {
     .nav {
         height: auto;
         width: auto;
@@ -308,79 +365,26 @@ export default {
     }
 }
 
-@media (max-width:380px) {
+@media (max-width: 380px) {
     #header {
-        font-family: 'Raleway', sans-serif;
-        line-height: 1.5;
-        font-weight: 400;
-        width: 100%;
-        left: 0;
-        top: 0;
-        z-index: 99;
         padding: 8px;
     }
 
     .header-main {
-        background-color: var(--bright-color);
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 5px 0;
-        border-radius: 4px;
     }
 
     #logo {
         padding-top: 10px;
-        text-decoration: none;
-        color: var(--dark-color);
-    }
-
-    #logo h1 {
-        font-size: 3.5vh;
-    }
-
-    .titulo {
-        display: flex;
-        align-items: center;
+        left: 10%;
     }
 
     .container {
         max-width: 100%;
         margin: 0;
     }
-}
-
-.fixed-container {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    background-color: #f8f8f8;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 100;
-    transition: all .5s ease-in;
-}
-
-.fixed-container.show {
-    display: block;
-}
-
-.nav-button {
-    background-color: #e7e7e7;
-    color: #0D0D0D;
-    border: none;
-    border-radius: 4px;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 0.75em;
-    font-weight: 500;
-}
-
-.nav-button:hover {
-    background-color: #d1d1d1;
-    color: #fff;
 }
 </style>
