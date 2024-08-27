@@ -16,7 +16,7 @@
                     <ul>
                         <li class="list">
                             <span class="indicator"></span>
-                            <router-link to="/FamiliaView.vue">
+                            <router-link to="/familia">
                                 <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
                                 <span class="text">Família</span>
                             </router-link>
@@ -30,7 +30,7 @@
                         </li>
                         <li class="list">
                             <span class="indicator"></span>
-                            <router-link to="/EmprestimosView.vue">
+                            <router-link to="/emprestimos">
                                 <span class="icon"><ion-icon name="book-outline"></ion-icon></span>
                                 <span class="text">Empréstimos</span>
                             </router-link>
