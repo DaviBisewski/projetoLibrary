@@ -1,3 +1,4 @@
+
 import { createRouter, createWebHistory } from 'vue-router';
 import FamiliaView from '../views/FamiliaView.vue';
 import EmprestimosView from '../views/EmprestimosView.vue';
@@ -13,5 +14,6 @@ const router = createRouter({
     history: createWebHistory(),
     routes
 });
+
 
 export default router;

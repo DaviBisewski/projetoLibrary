@@ -175,7 +175,7 @@ export default {
 .nav ul li a .icon,
 .nav-button .icon {
     line-height: 75px;
-    font-size: 2rem; /* Aumenta o tamanho dos ícones */
+    font-size: 2rem; 
     text-align: center;
     transition: .5s;
     color: #0D0D0D;
@@ -202,7 +202,7 @@ export default {
 .nav-button:hover .text {
     opacity: 1;
     transform: translateY(10px);
-    font-size: 1rem; /* Aumenta o tamanho da fonte ao passar o mouse */
+    font-size: 1rem; 
 }
 
 .indicator {
