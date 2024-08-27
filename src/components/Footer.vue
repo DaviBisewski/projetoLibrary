@@ -19,8 +19,8 @@
           <button class="button"><ion-icon name="logo-instagram"></ion-icon></button>
         </a>
         <a href="https://is.gd/cK92I3" target="_blank">
-        <button class="button"><ion-icon name="construct-outline"></ion-icon></button>
-      </a>
+          <button class="button"><ion-icon name="construct-outline"></ion-icon></button>
+        </a>
         <div class="settings-container">
           <button class="button"><ion-icon name="settings-outline"></ion-icon></button>
           <div class="boxForms">

@@ -240,7 +240,7 @@
     color: var(--bright-color);
   }
   
-  /* Responsividade */
+
   
   @media (max-width: 1000px) {
     #shop .title h1 {

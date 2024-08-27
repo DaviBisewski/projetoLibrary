@@ -1,20 +1,17 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import FamiliaView from '../views/FamiliaView.vue';
+import EmprestimosView from '../views/EmprestimosView.vue';
+import HomeView from '../views/HomeView.vue';
+
+const routes = [
+    { path: '/', component: HomeView },
+    { path: '/familia', component: FamiliaView },
+    { path: '/emprestimos', component: EmprestimosView }
+];
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Home
-    },
-    {
-      path: '/familia',
-      name: 'familia',
-      component: () => import('../views/FamiliaView.vue')
-    },
-  ]
-})
+    history: createWebHistory(),
+    routes
+});
 
-export default router
+export default router;
