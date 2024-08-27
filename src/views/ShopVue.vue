@@ -2,138 +2,156 @@
 </script>
 
 <template>
-    <section>
-    <div class="center">
-        <div class="livroimg">
-            <img src="../assets/icon.webp" alt="" />
+    <section id="fixedScreen">
+        <div class="mainBook">
+            <div class="boxImg">
+                <img src="../assets/icon.webp" alt="" />
+            </div>
+            <div class="boxInfo">
+                <div class="boxTitles">
+                    <div class="title">
+                        <h1>Titulo do Livro</h1>
+                    </div>
+                    <div class="subtitle">
+                        <h3>Autora:</h3>
+                    </div>
+                </div>
+                <div class="bookInfos">
+                    <p>Paginas:</p>
+                    <p>Editora:</p>
+                    <p>Edição:</p>
+                    <p>Idioma</p>
+                    <p>Codigo</p>
+                </div>
+                <div class="buttons">
+                    <button>Emprestar</button>
+                    <button>Reservar</button>
+                </div>
+            </div>
         </div>
-        <div class="mainInfos">
-        <div class="title">
-            <h1>Título</h1>
-            <h3>autora:</h3>
-        </div>
-        <div class="info">
-            <h3>páginas: x</h3>
-            <h3>editora: x</h3>
-            <h3>edição: x</h3>
-            <h3>idioma: x</h3>
-            <h3>código: x</h3>
-        </div>
-        <div class="buttons">
-            <button>Emprestar</button>
-            <button>Reservar</button>
-        </div>
-    </div>
-    </div>
-    <div class="desc">
-        <div class="title">
-        <h1>Descrição:</h1>
-    </div>
-        <div class="resumo">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam deleniti, in facere mollitia fugit, ut quibusdam distinctio eveniet magni sed, optio aliquid voluptate natus corrupti autem officia fugiat corporis rerum?</p>
+        <div class="mainDesc">
+            <div class="title">
+                <h2>Descrição:</h2>
+            </div>
+            <div class="boxText">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim quis, vero tenetur at porro ad aut fuga impedit quisquam laboriosam, consectetur officia, rem quae rerum illo placeat necessitatibus. Illo, distinctio? Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, sunt asperiores facere quis consectetur expedita voluptas maiores, provident excepturi minima ipsum in praesentium error omnis qui quas! Quis, adipisci maxime! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt amet assumenda fuga mollitia atque cum odio? Tenetur exercitationem, dignissimos in praesentium qui, voluptas itaque, reprehenderit esse consectetur officia dolores facilis!</p>
+            </div>
 
         </div>
-        <div class="disclaimer">
-
-        </div>
-    </div>
-</section>
+    </section>
 </template>
 
 <style scoped>
-    *{
-  box-sizing: border-box;
-  margin: 0;
-  border: 0;
-  padding: 0;
-  font-family: 'Raleway', sans-serif;
-
+* {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
 }
 
 
-section{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 750px;
-}
-.desc{
+#fixedScreen {
     width: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
+    gap: 40px;
+    padding: 50px;
 }
 
-.resumo{
-    border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 500px;
-}
-
-
-
-.buttons{
-    display: flex;
-    gap: 50px;
-}
-
-.buttons button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width:  100px;
-    height: 50px;
-    border-radius: 10px;
-}
-
-.center {
+#fixedScreen .mainBook {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 50px;
-    margin: 0 0 10px 0;
-    border: 1px solid black;
 }
 
-.mainInfos{
-    display: flex;
-    justify-content: center;
-    align-items: left;
-    flex-direction: column;
-    gap: 100px;
-}
-
-.livroimg, img{
+#fixedScreen .mainBook .boxImg img{
     width: 300px;
-    height:450px;
-    border: 1px solid black;
-
+    height: 400px;
+    border: 1px solid #0d0d0d;
 }
 
-.title{
-    width: 100%;
+#fixedScreen .mainBook .boxInfo {
     display: flex;
-    gap: 30px;
-    font-size: 20px;
-    align-items: left;
     flex-direction: column;
+    gap: 40px;
 }
 
-
-.info{
+#fixedScreen .mainBook .boxInfo .title {
     display: flex;
-    justify-content: right;
+    justify-content: center;
     align-items: center;
+}
+
+#fixedScreen .mainBook .boxInfo .title h1 {
+    font-size: 40px;
+}
+
+#fixedScreen .mainBook .boxInfo .subtitle {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+#fixedScreen .mainBook .boxInfo .subtitle h3 {
+    font-size: 20px;
+}
+
+#fixedScreen .mainBook .boxInfo .bookInfos {
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
     flex-direction: column;
-    height: 95px;
-    width: 200px;
-    gap: 10px;
     flex-wrap: wrap;
 }
 
+#fixedScreen .mainBook .boxInfo .bookInfos p {
+    font-size: 15px;
+}
+
+#fixedScreen .mainBook .boxInfo .buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#fixedScreen .mainBook .boxInfo .buttons button {
+    width: 90px;
+    padding: 10px 0;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+#fixedScreen .mainBook .boxInfo .buttons button:hover {
+    transform: scale(1.1);
+}
+
+#fixedScreen .mainDesc{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#fixedScreen .mainDesc .title{
+    width: 625px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+#fixedScreen .mainDesc .boxText{
+    width: 625px;
+    padding: 30px;
+    background-color: #e7e7e7;
+    text-align: justify;
+    border-radius: 10px;
+}
 </style>
