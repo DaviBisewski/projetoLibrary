@@ -3,12 +3,17 @@
     <section id="shop">
       <div class="banner">
         <img src="../assets/bannerimg.jpg" alt="Banner" class="banner-image" />
-        <h1 class="banner-title">ACERVO</h1>
+        <h1 class="banner-title">ACER<span>VO</span></h1>
       </div>
 
       <div class="sub-title">
         <h3>{{ resultados }} Resultados Exibidos</h3>
-        <hr class="sub-title-line" />
+        <select value="categoriass:" v-model="categoriass" name="Categorias:">
+                    <option value="categoriass">Categorias:</option>
+                    <option v-for="categoria of categorias" :key="categoria.id" :value="categoria.nome">
+                        {{ categoria.nome }}
+                    </option>
+        </select>
       </div>
 
       <div class="catalogo">
@@ -75,6 +80,12 @@ export default {
         { id: 11, name: 'Livro K', hover: false },
         { id: 12, name: 'Livro L', hover: false },
       ],
+      categorias: [
+    { id: '1', nome: 'Romance' },
+    { id: '2', nome: 'Mistério' },
+    { id: '3', nome: 'Ação' },
+    { id: '4', nome: 'Infantil' },
+],
     };
   },
   methods: {
@@ -96,7 +107,7 @@ export default {
 #shop .banner {
   position: relative;
   width: 100%;
-  height: 600px;
+  height: 80dvh;
   overflow: hidden;
 }
 
@@ -104,7 +115,7 @@ export default {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.7;
+  opacity: 1;
 }
 
 #shop .banner .banner-title {
@@ -119,26 +130,23 @@ export default {
   text-align: center;
 }
 
+#shop .banner .banner-title span{
+  color: #e91e63;
+}
+
 #shop .sub-title {
   width: 100%;
-  padding: 75px;
+  padding: 75px 75px 10px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  border-bottom: 2px solid #e91e63;
 }
 
 #shop .sub-title h3 {
   font-size: 15px;
   font-weight: 700;
   margin-bottom: 10px;
-}
-
-#shop .sub-title .sub-title-line {
-  width: 100%;
-  height: 2px;
-  background-color: #e91e63;
-  border: none;
-  margin-top: 5px;
 }
 
 #shop .catalogo {
