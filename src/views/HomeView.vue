@@ -1,4 +1,5 @@
 <template>
+  <link rel="stylesheet" href="https://unpkg.com/ionicons/dist/ionicons/ionicons.css">
   <div id="app">
     <section id="shop">
       <div class="banner">
@@ -7,6 +8,7 @@
       </div>
 
       <div class="sub-title">
+        <div class="select">
         <h3>{{ resultados }} Resultados Exibidos</h3>
         <select v-model="categoriass" name="Categorias:">
           <!-- Definindo a opção padrão 'Categorias:' -->
@@ -15,6 +17,11 @@
             {{ categoria.nome }}
           </option>
         </select>
+      </div>
+        <div class="search-container">
+          <input type="text" placeholder="Pesquisar..." id="search-input" />
+          <button id="search-button"><ion-icon name="search-outline"></ion-icon></button>
+        </div>
       </div>
 
       <div class="catalogo">
@@ -57,6 +64,7 @@
 <script>
 import FixedScreen from '../components/FixedScreen.vue';
 
+
 export default {
   name: 'HomeView',
   components: {
@@ -83,10 +91,9 @@ export default {
         { id: 12, name: 'Livro L', hover: false },
       ],
       categorias: [
-        { id: '1', nome: 'Romance' },
-        { id: '2', nome: 'Mistério' },
-        { id: '3', nome: 'Ação' },
-        { id: '4', nome: 'Infantil' },
+        { id: '1', nome: 'Juvenil' },
+        { id: '2', nome: 'Adulto' },
+        { id: '3', nome: 'infantil' },
       ],
     };
   },
@@ -106,10 +113,10 @@ export default {
 </script>
 
 <style scoped>
-
 #shop {
   background-color: #f6f7fb;
 }
+
 #shop .banner {
   position: relative;
   width: 100%;
@@ -137,18 +144,21 @@ export default {
   text-align: center;
 }
 
-#shop .banner .banner-title span{
-  color: rgb(95,114,217);
-color: linear-gradient(90deg, rgba(95,114,217,1) 30%, rgba(0,85,165,1) 70%);
+#shop .banner .banner-title span {
+  color: rgb(95, 114, 217);
+  color: linear-gradient(90deg, rgba(95, 114, 217, 1) 30%, rgba(0, 85, 165, 1) 70%);
+}
+.select{
+  flex-direction: column;
 }
 
 #shop .sub-title {
   width: 100%;
-  padding: 75px 75px 10px;
+  padding: 75px 75px 30px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
-  border-bottom: 2px solid rgb(70,93,219)
+  border-bottom: 2px solid rgb(70, 93, 219)
 }
 
 #shop .sub-title h3 {
@@ -160,6 +170,17 @@ color: linear-gradient(90deg, rgba(95,114,217,1) 30%, rgba(0,85,165,1) 70%);
 #shop .sub-title select {
   padding: 8px;
   font-size: 16px;
+}
+.search-container{
+  flex-direction:row ;
+  margin-left: 1200px;
+  margin-top: 40px;
+  width: 300px;
+  
+}
+.search-container input{
+  padding: 8px;
+  width: 200px;
 }
 
 #shop .catalogo {
@@ -243,7 +264,8 @@ color: linear-gradient(90deg, rgba(95,114,217,1) 30%, rgba(0,85,165,1) 70%);
 
 #shop .catalogo .roupas .bottom .btnSaibaMais button.hover {
   transform: scale(1.1) translateY(-10px);
-  background-color: var(--rosaclaro-color);
+  ;
+  background-color: rgb(70, 93, 219);
   color: var(--bright-color);
   border-radius: 15px;
 }
@@ -271,7 +293,7 @@ color: linear-gradient(90deg, rgba(95,114,217,1) 30%, rgba(0,85,165,1) 70%);
 
 #shop .catalogo .roupas .bottom .carrinho:hover {
   transform: scale(1.1) translateY(-10px);
-  background-color: var(--rosaclaro-color);
+  background-color: rgb(70, 93, 219);
 }
 
 #shop .catalogo .roupas .bottom .carrinho:hover ion-icon {
@@ -323,8 +345,8 @@ color: linear-gradient(90deg, rgba(95,114,217,1) 30%, rgba(0,85,165,1) 70%);
 .newsletter-container button {
   padding: 10px 20px;
 
-  background: rgb(70,93,219);
-background: linear-gradient(90deg, rgba(70,93,219,1) 0%, rgba(93,110,201,1) 50%, rgba(70,93,219,1) 100%);
+  background: rgb(70, 93, 219);
+  background: linear-gradient(90deg, rgba(70, 93, 219, 1) 0%, rgba(93, 110, 201, 1) 50%, rgba(70, 93, 219, 1) 100%);
   border: none;
   border-radius: 4px;
   color: white;
@@ -333,7 +355,7 @@ background: linear-gradient(90deg, rgba(70,93,219,1) 0%, rgba(93,110,201,1) 50%,
 }
 
 .newsletter-container button:hover {
-  background-color: rgb(70,93,219);
-background: linear-gradient(90deg, rgba(70,93,219,1) 0%, rgba(93,110,201,1) 50%, rgba(70,93,219,1) 100%);
+  background-color: rgb(70, 93, 219);
+  background: linear-gradient(90deg, rgba(70, 93, 219, 1) 0%, rgba(93, 110, 201, 1) 50%, rgba(70, 93, 219, 1) 100%);
 }
 </style>
