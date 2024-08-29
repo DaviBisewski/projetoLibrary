@@ -1,4 +1,5 @@
 <template>
+  <link rel="stylesheet" href="https://unpkg.com/ionicons/dist/ionicons/ionicons.css">
   <div id="app" class="compForm">
     <div v-if="componenteAtivo === 'BookRegView'" class="fixed-container">
       <BookRegView />
