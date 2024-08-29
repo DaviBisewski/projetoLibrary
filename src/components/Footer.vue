@@ -171,7 +171,8 @@ export default {
 
 .button {
   padding: 10px 15px;
-  background-color: #e91e63;
+  background: rgb(70,93,219);
+background: linear-gradient(90deg, rgba(70,93,219,1) 0%, rgba(93,110,201,1) 50%, rgba(70,93,219,1) 100%);
   color: white;
   border: none;
   border-radius: 25px;
@@ -182,16 +183,14 @@ export default {
 
 button {
   padding: 10px 15px;
-  background-color: #e91e63;
+  background: rgb(70,93,219);
+background: linear-gradient(90deg, rgba(70,93,219,1) 0%, rgba(93,110,201,1) 50%, rgba(70,93,219,1) 100%);
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #fc3a7b;
-}
 
 hr {
   width: 280px;
@@ -202,6 +201,6 @@ hr {
 }
 
 .title h2 {
-  color: #e91e63;
+  color: rgb(70,93,219)
 }
 </style>

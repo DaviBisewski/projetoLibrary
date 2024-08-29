@@ -127,7 +127,8 @@ export default {
 
 button {
   padding: 10px 15px;
-  background-color: #e91e63;
+  background: rgb(70,93,219);
+background: linear-gradient(90deg, rgba(70,93,219,1) 0%, rgba(93,110,201,1) 50%, rgba(70,93,219,1) 100%);
   color: white;
   border: none;
   border-radius: 5px;
@@ -144,13 +145,15 @@ hr {
   margin: 0 auto;
   border: none;
   height: 2px;
-  background-color: #e91e63;
+  background: rgb(70,93,219);
+background: linear-gradient(90deg, rgba(70,93,219,1) 0%, rgba(93,110,201,1) 50%, rgba(70,93,219,1) 100%);
 }
 
 .close-button {
   position: absolute;
   right: 10px;
-  background: #e91e63;
+  background: rgb(70,93,219);
+background: linear-gradient(90deg, rgba(70,93,219,1) 0%, rgba(93,110,201,1) 50%, rgba(70,93,219,1) 100%);
   color: white;
   border: none;
   border-radius: 50%;
@@ -170,11 +173,11 @@ hr {
 
 @keyframes spin {
   from {
-    transform: scale(40) translate(200px) rotate(500deg) translateY(1000px);
+    transform: scale(0);
   }
 
   to {
-    transform: scale(1) translate(0) rotate(0) translateY(0);
+    transform: scale(1);
   }
 }
 </style>

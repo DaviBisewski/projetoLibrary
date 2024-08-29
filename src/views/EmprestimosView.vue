@@ -1,4 +1,5 @@
 <template>
+    <div class="fundo">
     <section class="emprestimos">
         <h1 class="titulo">Meus Empréstimos</h1>
         <div class="lista-emprestimos">
@@ -14,9 +15,9 @@
                 </div>
             </div>
         </div>
-
         <RenovacaoComponent v-if="mostrarRenovacao" :livro="livroSelecionado" @fechar="fecharRenovacao" />
     </section>
+    </div>
 </template>
 
 <script>
@@ -59,6 +60,12 @@ align-items: center;
 text-align: center;
 padding: 20px;
 }
+
+.fundo{
+    width: 100%;
+    margin-top: 10px;
+    background-color: #f6f7fb;
+}
 .emprestimos {
     padding: 20px;
     max-width: 800px;
@@ -75,7 +82,7 @@ padding: 20px;
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    background-color: #f9f9f9;
+    background-color: white;
 }
 
 .info-livro h2 {
@@ -103,7 +110,8 @@ padding: 20px;
 
 .acoes button {
     padding: 8px 12px;
-    background-color: #e91e63;
+    background: rgb(70,93,219);
+background: linear-gradient(90deg, rgba(70,93,219,1) 0%, rgba(93,110,201,1) 50%, rgba(70,93,219,1) 100%);
     border: none;
     border-radius: 4px;
     color: white;

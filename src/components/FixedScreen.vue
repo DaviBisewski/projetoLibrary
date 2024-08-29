@@ -181,11 +181,11 @@
 
 @keyframes spin {
   from {
-    transform: scale(40) translate(200px) rotate(500deg) translateY(1000px);
+    transform: scale(0);
   }
 
   to {
-    transform: scale(1) translate(0) rotate(0) translateY(0);
+    transform: scale(1);
   }
 }
 

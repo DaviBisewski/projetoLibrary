@@ -95,14 +95,16 @@ export default {
     justify-content: center;
     padding: 13px;
     border-radius: 50%;
-    background-color: #e91e63 ;
+    background: rgb(70,93,219);
+background: linear-gradient(90deg, rgba(70,93,219,1) 0%, rgba(93,110,201,1) 50%, rgba(70,93,219,1) 100%);
     color: #e7e7e7;
     transition: all 0.5s ease;
 }
 
 #header .redes-sociais a:hover {
     transform: scale(1.1);
-    color: var(--rosaclaro-color);
+    background: rgb(70,93,219);
+background: linear-gradient(90deg, rgba(70,93,219,1) 0%, rgba(93,110,201,1) 50%, rgba(70,93,219,1) 100%);
     background-color: #e7e7e7;
 }
 
@@ -210,7 +212,8 @@ export default {
     top: -50%;
     width: 70px;
     height: 70px;
-    background-color: #e91e63;
+    background: rgb(70,93,219);
+background: linear-gradient(90deg, rgba(70,93,219,1) 0%, rgba(93,110,201,1) 50%, rgba(70,93,219,1) 100%);
     border-radius: 50%;
     border: 6px solid #fff;
     transition: all .5s ease-in-out;
@@ -249,7 +252,8 @@ export default {
     top: -50%;
     width: 70px;
     height: 70px;
-    background-color: #e91e63;
+    background: rgb(70,93,219);
+background: linear-gradient(90deg, rgba(70,93,219,1) 0%, rgba(93,110,201,1) 50%, rgba(70,93,219,1) 100%);
     border-radius: 50%;
     border: 6px solid #fff;
     transition: all .5s ease-in-out;

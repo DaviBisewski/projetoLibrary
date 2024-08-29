@@ -24,7 +24,7 @@
   min-width: 750px;
   border-radius: 5px;
   height: auto;
-  background-color: #D9D9D9;
+  background-color: white;
   padding: 60px;
   text-align: center;
 }

@@ -37,7 +37,6 @@ components: {
 --bright-color: #FFF;
 --cinzaescuro-color: #212121;
 --azulnaval-color: #274360;
---rosaclaro-color: #e91e63;
 }
 
 ul{
@@ -55,7 +54,7 @@ background-color: var(--cinzaescuro-color);
 }
 ::-webkit-scrollbar-thumb{
 width: 10px;
-background-color: var(--rosaclaro-color);
+background-color: #5d6ec9;
 border-radius: 10px;
 }
 </style>
