@@ -38,7 +38,7 @@ import LivroComponent from '../components/LivroComponent.vue';
   align-items: center;
   gap: 40px;
   padding: 20px;
-  background-color: whitesmoke;
+  background-color: #f6f7fb;
   margin-top: 10px; 
 }
 
@@ -56,7 +56,7 @@ import LivroComponent from '../components/LivroComponent.vue';
   align-items: center;
   min-width: 650px;
   height: 150px;
-  background-color: #D9D9D9;
+  background-color: white;
   padding: 20px;
   border-radius: 14px;
 }
@@ -64,6 +64,6 @@ import LivroComponent from '../components/LivroComponent.vue';
 .footer {
   margin-top: 40px;
   padding: 20px;
-  background-color: #f1f1f1;
+  background-color: white;
 }
 </style>

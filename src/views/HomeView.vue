@@ -8,11 +8,12 @@
 
       <div class="sub-title">
         <h3>{{ resultados }} Resultados Exibidos</h3>
-        <select value="categoriass:" v-model="categoriass" name="Categorias:">
-                    <option value="categoriass">Categorias:</option>
-                    <option v-for="categoria of categorias" :key="categoria.id" :value="categoria.nome">
-                        {{ categoria.nome }}
-                    </option>
+        <select v-model="categoriass" name="Categorias:">
+          <!-- Definindo a opção padrão 'Categorias:' -->
+          <option value="categoriass">Categorias:</option>
+          <option v-for="categoria of categorias" :key="categoria.id" :value="categoria.nome">
+            {{ categoria.nome }}
+          </option>
         </select>
       </div>
 
@@ -66,6 +67,7 @@ export default {
       componenteAtivo: false,
       resultados: 12,
       email: '',
+      categoriass: 'categoriass', // Define o valor padrão para a seleção
       itens: [
         { id: 1, name: 'Livro A', hover: false },
         { id: 2, name: 'Livro B', hover: false },
@@ -81,11 +83,11 @@ export default {
         { id: 12, name: 'Livro L', hover: false },
       ],
       categorias: [
-    { id: '1', nome: 'Romance' },
-    { id: '2', nome: 'Mistério' },
-    { id: '3', nome: 'Ação' },
-    { id: '4', nome: 'Infantil' },
-],
+        { id: '1', nome: 'Romance' },
+        { id: '2', nome: 'Mistério' },
+        { id: '3', nome: 'Ação' },
+        { id: '4', nome: 'Infantil' },
+      ],
     };
   },
   methods: {
@@ -104,11 +106,16 @@ export default {
 </script>
 
 <style scoped>
+
+#shop {
+  background-color: #f6f7fb;
+}
 #shop .banner {
   position: relative;
   width: 100%;
   height: 80dvh;
   overflow: hidden;
+  margin-top: 10px;
 }
 
 #shop .banner .banner-image {
@@ -131,7 +138,8 @@ export default {
 }
 
 #shop .banner .banner-title span{
-  color: #e91e63;
+  color: rgb(95,114,217);
+color: linear-gradient(90deg, rgba(95,114,217,1) 30%, rgba(0,85,165,1) 70%);
 }
 
 #shop .sub-title {
@@ -140,13 +148,18 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  border-bottom: 2px solid #e91e63;
+  border-bottom: 2px solid rgb(70,93,219)
 }
 
 #shop .sub-title h3 {
   font-size: 15px;
   font-weight: 700;
   margin-bottom: 10px;
+}
+
+#shop .sub-title select {
+  padding: 8px;
+  font-size: 16px;
 }
 
 #shop .catalogo {
@@ -162,7 +175,7 @@ export default {
   width: calc(25% - 20px);
   height: 450px;
   border-radius: 12px;
-  background-color: #e7e7e7;
+  background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -290,7 +303,7 @@ export default {
 
 .newsletter-container {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -309,7 +322,9 @@ export default {
 
 .newsletter-container button {
   padding: 10px 20px;
-  background-color: #e91e63;
+
+  background: rgb(70,93,219);
+background: linear-gradient(90deg, rgba(70,93,219,1) 0%, rgba(93,110,201,1) 50%, rgba(70,93,219,1) 100%);
   border: none;
   border-radius: 4px;
   color: white;
@@ -318,6 +333,7 @@ export default {
 }
 
 .newsletter-container button:hover {
-  background-color: #d81b60;
+  background-color: rgb(70,93,219);
+background: linear-gradient(90deg, rgba(70,93,219,1) 0%, rgba(93,110,201,1) 50%, rgba(70,93,219,1) 100%);
 }
 </style>
