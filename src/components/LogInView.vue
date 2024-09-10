@@ -7,37 +7,63 @@
       <form>
         <div>
           <label for="email">Email:</label>
-          <input type="text" id="email    " required />
+          <input type="text" id="email" required />
         </div>
         <div>
           <label for="senha">Senha:</label>
           <input type="password" id="senha" required />
         </div>
-        <button type="submit">Registrar</button>
+        <button type="submit">Entrar</button>
+        <!-- Botão de Cadastro -->
+        <button type="button" @click="mostrarCadastro">Cadastrar</button>
       </form>
     </div>
   </section>
+
+  <!-- Exibir RegisterView.vue -->
+  <RegisterView v-if="mostrarRegistro" @fechar="fecharRegistro" />
 </template>
 
 <script>
 import { ref } from 'vue';
+import RegisterView from './RegisterView.vue'; // Importando o componente de cadastro
 
 export default {
-  name: 'RegFamView',
+  name: 'LoginView',
+  components: {
+    RegisterView
+  },
   setup() {
     const visivel = ref(true);
+    const mostrarRegistro = ref(false);
 
     const fecharComponente = () => {
       visivel.value = false;
     };
 
+    const mostrarCadastro = () => {
+      visivel.value = false;
+      mostrarRegistro.value = true;
+    };
+
+    const fecharRegistro = () => {
+      mostrarRegistro.value = false;
+      visivel.value = true;
+    };
+
     return {
       visivel,
-      fecharComponente
+      fecharComponente,
+      mostrarCadastro,
+      mostrarRegistro,
+      fecharRegistro
     };
   }
 }
 </script>
+
+
+
 
 <style scoped>
 .book-form {
@@ -86,6 +112,10 @@ background: linear-gradient(90deg, rgba(70,93,219,1) 0%, rgba(93,110,201,1) 50%,
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+button + button{
+  margin-left: 20px;
 }
 
 hr {

@@ -1,9 +1,9 @@
 <template>
-  <Header />
+  <Header v-if="$route.name !== 'Login'"/>
   <div>
     <router-view></router-view>
   </div>
-  <Footer />
+  <Footer v-if="$route.name !== 'Login'" />
 
 </template>
 

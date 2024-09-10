@@ -8,7 +8,7 @@
         <div class="container">
             <div class="header-main">
                 <div class="titulo">
-                    <router-link to="/">
+                    <router-link to="/Home">
                         <img id="logo" src="../assets/icon.webp" alt="">
                     </router-link>
                 </div>

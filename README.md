@@ -34,4 +34,4 @@
 - **RN 013** - A gestão de livros deve ser feita por meio de um painel administrativo onde os administradores podem adicionar, editar e remover livros do acervo.
 
 ## RF 011 - O sistema deve permitir que os pais gerenciem os livros de sua família
-- **RN 001** - Os pais podem gerenciar os livros emprestados e disponíveis para seus filhos através de uma interface específica para administração familiar.
+- **RN 014** - Os pais podem gerenciar os livros emprestados e disponíveis para seus filhos através de uma interface específica para administração familiar.
