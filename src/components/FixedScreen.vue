@@ -1,29 +1,30 @@
-
 <template>
+  <div>
+    <!-- Exibe o componente atual apenas se `visivel` for true -->
     <section id="fixedScreen" v-if="visivel">
       <div class="mainBook">
         <button class="close-button" @click="fecharComponente">✖</button>
         <div class="boxImg">
-          <img src="../assets/icon.webp" alt="" />
+          <img src="../assets/icon.webp" alt="Ícone do Livro" />
         </div>
         <div class="boxInfo">
           <div class="boxTitles">
             <div class="title">
-              <h1>Titulo do Livro</h1>
+              <h1>Título do Livro</h1>
             </div>
             <div class="subtitle">
               <h3>Autora:</h3>
             </div>
           </div>
           <div class="bookInfos">
-            <p>Paginas:</p>
+            <p>Páginas:</p>
             <p>Editora:</p>
             <p>Edição:</p>
             <p>Idioma:</p>
-            <p>Codigo:</p>
+            <p>Código:</p>
           </div>
           <div class="buttons">
-            <button>Emprestar</button>
+            <button @click="mostrarLoanView">Emprestar</button> <!-- Modificado -->
             <button>Reservar</button>
           </div>
         </div>
@@ -37,28 +38,46 @@
         </div>
       </div>
     </section>
-  </template>
-  
-  <script>
-  import { ref } from 'vue';
-  
-  export default {
-    name: 'FixedScreen',
-    setup(props, { emit }) {
-      const visivel = ref(true);
-  
-      const fecharComponente = () => {
-        visivel.value = false;
-        emit('close');
-      };
-  
-      return {
-        visivel,
-        fecharComponente
-      };
-    }
-  }
-  </script>
+
+    <!-- Exibe LoanView apenas se `visivelLoanView` for true -->
+    <LoanView v-if="visivelLoanView" />
+  </div>
+</template>
+
+<script>
+import { ref } from 'vue';
+import LoanView from './LoanView.vue'; // Certifique-se de que LoanView está no mesmo diretório ou ajuste o caminho
+
+export default {
+  name: 'FixedScreen',
+  components: {
+    LoanView,
+  },
+  setup(props, { emit }) {
+    const visivel = ref(true); // Controle da visibilidade do componente atual (FixedScreen.vue)
+    const visivelLoanView = ref(false); // Controle da visibilidade do LoanView.vue
+
+    // Função para fechar o componente atual
+    const fecharComponente = () => {
+      visivel.value = false;
+      emit('close');
+    };
+
+    // Função para alternar a exibição dos componentes
+    const mostrarLoanView = () => {
+      visivel.value = false; // Esconde o componente atual
+      visivelLoanView.value = true; // Exibe o LoanView.vue
+    };
+
+    return {
+      visivel,
+      visivelLoanView,
+      fecharComponente,
+      mostrarLoanView,
+    };
+  },
+};
+</script>
 
 <style scoped>
 * {
@@ -68,7 +87,6 @@
     padding: 0;
     font-family: 'Raleway', sans-serif;
 }
-
 
 #fixedScreen {
     width: 100%;
@@ -177,7 +195,6 @@
     text-align: justify;
     border-radius: 10px;
 }
-
 
 @keyframes spin {
   from {

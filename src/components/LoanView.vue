@@ -149,7 +149,8 @@ background: linear-gradient(90deg, rgba(70,93,219,1) 0%, rgba(93,110,201,1) 50%,
 
 .close-button {
   position: absolute;
-  right: 1px;
+  right: 10px;
+  top: 10px;
   background: rgb(70,93,219);
 background: linear-gradient(90deg, rgba(70,93,219,1) 0%, rgba(93,110,201,1) 50%, rgba(70,93,219,1) 100%);
   color: white;
