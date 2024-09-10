@@ -17,13 +17,13 @@
     <footer id="bottom">
       <div class="prin-info">
         <a href="https://www.instagram.com/grupolivrariascuritiba/" target="_blank">
-          <button class="button"><ion-icon name="logo-instagram"></ion-icon></button>
+          <button class="button"><img src="../assets/img/logo-instagram.svg"></button>
         </a>
         <a href="https://is.gd/cK92I3" target="_blank">
-          <button class="button"><ion-icon name="construct-outline"></ion-icon></button>
+          <button class="button"><img src="../assets/img/tool.svg"></button>
         </a>
         <div class="settings-container">
-          <button class="button"><ion-icon name="settings-outline"></ion-icon></button>
+          <button class="button"><img src="../assets/img/settings-outline.svg"></button>
           <div class="boxForms">
             <div class="title">
               <h2 class="titulo">Registros</h2>
@@ -180,6 +180,10 @@ background: linear-gradient(90deg, rgba(70,93,219,1) 0%, rgba(93,110,201,1) 50%,
   cursor: pointer;
   font-size: 23px;
   margin-right: 27px;
+}
+
+.button img{
+  width: 19.9px;
 }
 
 button {

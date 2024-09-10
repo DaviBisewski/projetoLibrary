@@ -1,7 +1,7 @@
 <template>
   <div class="container">
       <HeaderComponent />
-
+    <main>
       <section class="content-section">
           <div class="quadradao">
               <PessoaComponent imgSrc="caminho/para/imagem.png" nome="Lorem" />
@@ -22,6 +22,7 @@
               <LivroComponent imgSrc="caminho/para/imagem_livro.png" nomeLivro="Nome Livro" />
           </div>
       </section>
+    </main>
   </div>
 </template>
 
@@ -36,18 +37,24 @@ import LivroComponent from '../components/LivroComponent.vue';
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
   padding: 20px;
   background-color: #f6f7fb;
   margin-top: 10px; 
 }
 
+main{
+  background-color: rgb(95, 114, 217);
+  border-radius:0 0 10px 10px;
+  padding: 20px 0;
+}
+
 .content-section {
-  width: 100%;
+  width: 750px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
+  background-color: rgb(95, 114, 217);
 }
 
 .quadradao {

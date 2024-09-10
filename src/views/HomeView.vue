@@ -20,7 +20,7 @@
       </div>
         <div class="search-container">
           <input type="text" placeholder="Pesquisar..." id="search-input" />
-          <button id="search-button"><ion-icon name="search-outline"></ion-icon></button>
+          <button id="search-button"><img src="../assets/img/search-circle-outline.svg"></button>
         </div>
       </div>
 
@@ -36,12 +36,12 @@
             <div class="btnSaibaMais">
               <button :class="{ 'hover': item.hover }" @mouseover="item.hover = true" @mouseleave="item.hover = false"
                 @click="toggleComponent">
-                <ion-icon name="enter-outline"></ion-icon>
+                <img src="../assets/img/exit-outline.svg">
                 Saiba Mais
               </button>
             </div>
             <div class="carrinho">
-              <button><ion-icon name="people-outline"></ion-icon></button>
+              <button><img src="../assets/img/people-outline.svg"></button>
             </div>
           </div>
           <div class="boxFixedScreen" :class="{ 'show': componenteAtivo }">
@@ -172,15 +172,24 @@ export default {
   font-size: 16px;
 }
 .search-container{
-  flex-direction:row ;
+  display: flex;
   margin-left: 1200px;
   margin-top: 40px;
-  width: 300px;
-  
 }
 .search-container input{
   padding: 8px;
   width: 200px;
+  border-radius: 10px;
+  border: 1px solid rgb(95, 114, 217);
+}
+
+.search-container button{
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.search-container button img{
+  width: 30px;
 }
 
 #shop .catalogo {
@@ -257,8 +266,8 @@ export default {
   padding: 10px 15px;
 }
 
-#shop .catalogo .roupas .bottom .btnSaibaMais ion-icon {
-  font-size: 15px;
+#shop .catalogo .roupas .bottom .btnSaibaMais img {
+  width: 15px;
   margin-right: 5px;
 }
 
@@ -285,15 +294,13 @@ export default {
   background: transparent;
 }
 
-#shop .catalogo .roupas .bottom .carrinho ion-icon {
-  font-size: 16px;
-  color: #0d0d0d;
+#shop .catalogo .roupas .bottom .carrinho img {
+  width: 16px;
   transition: all 0.5s ease;
 }
 
 #shop .catalogo .roupas .bottom .carrinho:hover {
   transform: scale(1.1) translateY(-10px);
-  background-color: rgb(70, 93, 219);
 }
 
 #shop .catalogo .roupas .bottom .carrinho:hover ion-icon {
