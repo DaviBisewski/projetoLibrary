@@ -1,5 +1,4 @@
 <template>
-  <link rel="stylesheet" href="https://unpkg.com/ionicons/dist/ionicons/ionicons.css">
   <div id="app">
     <section id="shop">
       <div class="banner">
@@ -9,20 +8,19 @@
 
       <div class="sub-title">
         <div class="select">
-        <h3>{{ resultados }} Resultados Exibidos</h3>
-        <select v-model="categoriass" name="Categorias:">
-          <!-- Definindo a opção padrão 'Categorias:' -->
-          <option value="categoriass">Categorias:</option>
-          <option v-for="categoria of categorias" :key="categoria.id" :value="categoria.nome">
-            {{ categoria.nome }}
-          </option>
-        </select>
-      </div>
+          <h3>{{ resultados }} Resultados Exibidos</h3>
+          <select v-model="categoriass" name="Categorias:">
+            <option value="categoriass">Categorias:</option>
+            <option v-for="categoria of categorias" :key="categoria.id" :value="categoria.nome">
+              {{ categoria.nome }}
+            </option>
+          </select>
+        </div>
         <div class="search-container">
           <input type="text" placeholder="Pesquisar..." id="search-input" />
-          <button id="search-button"><img src="../assets/img/search-circle-outline.svg"></button>
+          <button id="search-button"><img src="../assets/img/search-circle-outline.svg" alt="Pesquisar"></button>
         </div>
-    </div>
+      </div>
 
       <div class="catalogo">
         <div class="roupas" v-for="item in itens" :key="item.id">
@@ -36,12 +34,12 @@
             <div class="btnSaibaMais">
               <button :class="{ 'hover': item.hover }" @mouseover="item.hover = true" @mouseleave="item.hover = false"
                 @click="toggleComponent">
-                <img src="../assets/img/exit-outline.svg">
+                <img src="../assets/img/exit-outline.svg" alt="Saiba Mais">
                 Saiba Mais
               </button>
             </div>
             <div class="carrinho">
-              <button><img src="../assets/img/people-outline.svg"></button>
+              <button @click="showButtonPlus"><img src="../assets/img/people-outline.svg" alt="Carrinho"></button>
             </div>
           </div>
           <div class="boxFixedScreen" :class="{ 'show': componenteAtivo }">
@@ -58,24 +56,27 @@
         <button @click="enviarEmail">Enviar</button>
       </div>
     </section>
+
+    <button-plus ref="buttonPlus"></button-plus>
   </div>
 </template>
 
 <script>
 import FixedScreen from '../components/FixedScreen.vue';
-
+import ButtonPlus from '../components/ButtonPlus.vue';
 
 export default {
   name: 'HomeView',
   components: {
     FixedScreen,
+    ButtonPlus,
   },
   data() {
     return {
       componenteAtivo: false,
       resultados: 12,
       email: '',
-      categoriass: 'categoriass', // Define o valor padrão para a seleção
+      categoriass: 'categoriass',
       itens: [
         { id: 1, name: 'Livro A', hover: false },
         { id: 2, name: 'Livro B', hover: false },
@@ -93,13 +94,17 @@ export default {
       categorias: [
         { id: '1', nome: 'Juvenil' },
         { id: '2', nome: 'Adulto' },
-        { id: '3', nome: 'infantil' },
+        { id: '3', nome: 'Infantil' },
       ],
     };
   },
   methods: {
     toggleComponent() {
       this.componenteAtivo = !this.componenteAtivo;
+    },
+    showButtonPlus() {
+      const buttonPlus = this.$refs.buttonPlus;
+      buttonPlus.startAnimation();
     },
     enviarEmail() {
       if (this.email) {
@@ -108,11 +113,12 @@ export default {
         alert('Por favor, insira um e-mail válido.');
       }
     }
-  },
+  }
 };
 </script>
 
 <style scoped>
+/* Estilos para a HomeView (mesmo estilo que antes) */
 #shop {
   background-color: #f6f7fb;
 }
@@ -148,7 +154,8 @@ export default {
   color: rgb(95, 114, 217);
   color: linear-gradient(90deg, rgba(95, 114, 217, 1) 30%, rgba(0, 85, 165, 1) 70%);
 }
-.select{
+
+.select {
   flex-direction: column;
 }
 
@@ -158,7 +165,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 2px solid rgb(70, 93, 219)
+  border-bottom: 2px solid rgb(70, 93, 219);
 }
 
 #shop .sub-title h3 {
@@ -167,37 +174,32 @@ export default {
   margin-bottom: 10px;
 }
 
-#shop .sub-title select {
-  padding: 8px;
-  font-size: 16px;
-}
-.search-container{
+#shop .search-container {
   display: flex;
-  margin-top: 40px;
-}
-.search-container input{
-  padding: 8px;
-  width: 200px;
-  border-radius: 10px;
-  border: 1px solid rgb(95, 114, 217);
+  align-items: center;
 }
 
-.search-container button{
-  background-color: transparent;
-  cursor: pointer;
+#shop .search-container input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
 }
 
-.search-container button img{
-  width: 30px;
+#shop .search-container button {
+  background: none;
+  border: none;
+}
+
+#shop .search-container button img {
+  width: 20px;
 }
 
 #shop .catalogo {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px 150px 75px;
   gap: 25px;
+  padding: 40px 150px 75px;
 }
 
 #shop .catalogo .roupas {
@@ -209,7 +211,6 @@ export default {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 #shop .catalogo .roupas .imgRoupa {
@@ -273,7 +274,6 @@ export default {
 
 #shop .catalogo .roupas .bottom .btnSaibaMais button.hover {
   transform: scale(1.1) translateY(-10px);
-  ;
   background-color: rgb(70, 93, 219);
   color: var(--bright-color);
   border-radius: 15px;
@@ -351,7 +351,6 @@ export default {
 
 .newsletter-container button {
   padding: 10px 20px;
-
   background: rgb(70, 93, 219);
   background: linear-gradient(90deg, rgba(70, 93, 219, 1) 0%, rgba(93, 110, 201, 1) 50%, rgba(70, 93, 219, 1) 100%);
   border: none;
