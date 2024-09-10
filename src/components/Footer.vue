@@ -148,7 +148,7 @@ export default {
 .boxForms {
   display: none;
   position: absolute;
-  top: 0px;
+  top: -60px;
   right: -150px;
   background-color: #f8f8f8;
   border: 1px solid #ddd;
@@ -157,7 +157,6 @@ export default {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 100;
   transition: all .5s ease-in;
-  height: 300px;
 }
 
 .settings-container:hover .boxForms {

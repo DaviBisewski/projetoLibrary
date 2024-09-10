@@ -6,7 +6,6 @@
       <p class="password-label">Senha:</p>
     </div>
 
-    <p class="members-label">Membros:</p>
   </div>
 </template>
 
@@ -45,10 +44,4 @@
   letter-spacing: .75px;
 }
 
-.members-label {
-  width: 100%;
-  margin: 20px 0 0 20px;
-  font-size: 40px;
-  color: #fff;
-}
 </style>

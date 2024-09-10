@@ -22,7 +22,7 @@
           <input type="text" placeholder="Pesquisar..." id="search-input" />
           <button id="search-button"><img src="../assets/img/search-circle-outline.svg"></button>
         </div>
-      </div>
+    </div>
 
       <div class="catalogo">
         <div class="roupas" v-for="item in itens" :key="item.id">
@@ -156,8 +156,8 @@ export default {
   width: 100%;
   padding: 75px 75px 30px;
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: space-between;
   border-bottom: 2px solid rgb(70, 93, 219)
 }
 
@@ -173,7 +173,6 @@ export default {
 }
 .search-container{
   display: flex;
-  margin-left: 1200px;
   margin-top: 40px;
 }
 .search-container input{
@@ -202,7 +201,7 @@ export default {
 }
 
 #shop .catalogo .roupas {
-  width: calc(25% - 20px);
+  width: 350px;
   height: 450px;
   border-radius: 12px;
   background-color: white;
@@ -210,6 +209,7 @@ export default {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 #shop .catalogo .roupas .imgRoupa {

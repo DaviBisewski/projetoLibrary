@@ -2,6 +2,7 @@
   <div class="container">
       <HeaderComponent />
     <main>
+      <h1 class="members-label">Membros:</h1>
       <section class="content-section">
           <div class="quadradao">
               <PessoaComponent imgSrc="caminho/para/imagem.png" nome="Lorem" />
@@ -22,6 +23,38 @@
               <LivroComponent imgSrc="caminho/para/imagem_livro.png" nomeLivro="Nome Livro" />
           </div>
       </section>
+      <div class="mainComentarios">
+        <div class="title">
+          <h1 class="members-label">Comentarios da Familia:</h1>
+        </div>
+        <div class="boxComentarios">
+          <div class="infosComentarios">
+            <p>Nome:</p>
+            <p>CPF:</p>
+          </div>
+          <div class="comantario">
+            <textarea  id="desc" cols="60" rows="5" placeholder="Escreva aqui..."></textarea>
+          </div>
+        </div>
+        <div class="boxComentarios">
+          <div class="infosComentarios">
+            <p>Nome:</p>
+            <p>CPF:</p>
+          </div>
+          <div class="comantario">
+            <textarea  id="desc" cols="60" rows="5" placeholder="Escreva aqui..."></textarea>
+          </div>
+        </div>
+        <div class="boxComentarios">
+          <div class="infosComentarios">
+            <p>Nome:</p>
+            <p>CPF:</p>
+          </div>
+          <div class="comantario">
+            <textarea  id="desc" cols="60" rows="5" placeholder="Escreva aqui..."></textarea>
+          </div>
+        </div>
+      </div>
     </main>
   </div>
 </template>
@@ -33,6 +66,40 @@ import LivroComponent from '../components/LivroComponent.vue';
 </script>
 
 <style scoped>
+#desc{
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.mainComentarios .boxComentarios {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.mainComentarios .boxComentarios:nth-child(3), .mainComentarios .boxComentarios:nth-child(5), .mainComentarios .boxComentarios:nth-child(7){
+  position: relative;
+  left: -70px;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 20px;
+}
+
+.mainComentarios .boxComentarios .infosComentarios{
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 10px;
+  color: #fff;
+}
+
+.mainComentarios .boxComentarios .infosComentarios p{
+  font-size: 18px;
+  font-weight: 600;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -46,6 +113,13 @@ main{
   background-color: rgb(95, 114, 217);
   border-radius:0 0 10px 10px;
   padding: 20px 0;
+}
+
+.members-label {
+  width: 100%;
+  margin: 20px 0 10px 20px;
+  font-size: 40px;
+  color: #fff;
 }
 
 .content-section {
