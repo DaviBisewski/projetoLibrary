@@ -64,7 +64,7 @@ padding: 20px;
 .fundo{
     width: 100%;
     margin-top: 10px;
-    background-color: #f6f7fb;
+    background: linear-gradient(135deg, rgba(93,110,201,1) 0%, #e0e0e0 120%);
 }
 .emprestimos {
     padding: 20px;
