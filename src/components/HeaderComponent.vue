@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="title">
-      <h1>Família</h1>
+      <h1>Sua Família no Livro Amigo</h1>
 
       <p class="password-label">Senha:</p>
     </div>
@@ -11,34 +11,35 @@
 
 <style scoped>
 .header {
+  width: 1105px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background-color: rgb(95, 114, 217);
-  
+  align-items: start;
+  background: #fff;
+  padding: 50px 0 50px 20px;
+  border: 1px solid #e0e0e0;
+  border-bottom: 0 solid transparent;
 }
 
 .title {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   min-width: 750px;
   height: auto;
-  padding: 60px;
-  text-align: center;
   border-bottom: 1px solid #fff;
 }
 
 .title h1 {
-  font-size: 70px;
+  font-size: 30px;
   letter-spacing: 1.5px;
   font-weight: 600;
-  color: #fff;
+  color: #0d0d0d;
 }
 
 .password-label {
   font-size: 20px;
-  color: #fff;
+  color: #0d0d0d;
   margin-top: 10px;
   letter-spacing: .75px;
 }

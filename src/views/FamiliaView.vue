@@ -33,7 +33,7 @@
             <p>Livro:</p>
           </div>
           <div class="comantario">
-            <textarea  id="desc" cols="40" rows="5" placeholder="Escreva aqui..."></textarea>
+            <textarea  class="desc" cols="40" rows="5" placeholder="Escreva aqui..."></textarea>
           </div>
         </div>
         <div class="boxComentarios">
@@ -42,7 +42,7 @@
             <p>Livro:</p>
           </div>
           <div class="comantario">
-            <textarea  id="desc" cols="40" rows="5" placeholder="Escreva aqui..."></textarea>
+            <textarea  class="desc" cols="40" rows="5" placeholder="Escreva aqui..."></textarea>
           </div>
         </div>
         <div class="boxComentarios">
@@ -51,7 +51,7 @@
             <p>Livro:</p>
           </div>
           <div class="comantario">
-            <textarea  id="desc" cols="40" rows="5" placeholder="Escreva aqui..."></textarea>
+            <textarea  class="desc" cols="40" rows="5" placeholder="Escreva aqui..."></textarea>
           </div>
         </div>
       </div>
@@ -67,24 +67,44 @@ import LivroComponent from '../components/LivroComponent.vue';
 
 <style scoped>
 
-#desc{
+.desc{
+  position: relative;
   padding: 10px;
   border-radius: 10px;
+  border: 1px solid #e0e0e0;
+}
+
+.mainComentarios .boxComentarios:nth-child(3) .desc{
+  left: -70px;
+}
+
+.mainComentarios{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .mainComentarios .boxComentarios {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   margin: 15px 0;
+  width: 700px;
+  gap: 150px;
+  padding: 20px;
 }
 
 .mainComentarios .boxComentarios:nth-child(3), .mainComentarios .boxComentarios:nth-child(5), .mainComentarios .boxComentarios:nth-child(7){
   position: relative;
-  left: -70px;
   flex-direction: row-reverse;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
+}
+
+.mainComentarios .boxComentarios:nth-child(3) .infosComentarios{
+  position: relative;
+  left: -50px;
 }
 
 .mainComentarios .boxComentarios .infosComentarios{
@@ -93,7 +113,7 @@ import LivroComponent from '../components/LivroComponent.vue';
   align-items: start;
   flex-direction: column;
   gap: 10px;
-  color: #fff;
+  color: #0d0d0d;
 }
 
 .mainComentarios .boxComentarios .infosComentarios p{
@@ -106,22 +126,44 @@ import LivroComponent from '../components/LivroComponent.vue';
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background-color: rgb(95, 114, 217); ;
+  background-color: #fff ;
   margin-top: 10px; 
-  background: linear-gradient(135deg, rgba(93,110,201,1) 0%, #e0e0e0 120%);
 }
 
 main{
-  background-color: rgba(93,110,201,1);
-  border-radius:0px 10px 10px 10px;
+  width: 1105px;
+  background-color: #fff ;
+  border-radius:0px 0 10px 10px;
   padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  border-top: 0px solid transparent;
 }
 
 .members-label {
-  width: 100%;
-  margin: 20px 0 10px 20px;
-  font-size: 40px;
-  color: #fff;
+  width: 205px;
+  margin: 20px 0 10px 0;
+  font-size: 28px;
+  color: #0d0d0d;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-bottom: 1px solid #e0e0e0;
+  margin: auto;
+}
+
+ .title .members-label{
+  width: 475px;
+  margin: 20px 0 10px 0;
+  font-size: 28px;
+  color: #0d0d0d;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-bottom: 1px solid #e0e0e0;
+  margin: auto;
 }
 
 .content-section {
@@ -130,7 +172,8 @@ main{
   justify-content: center;
   align-items: center;
   margin-bottom: 40px;
-  background-color: rgba(93,110,201,1);
+  background-color: #fff ;
+  border-bottom: 1px solid #e0e0e0;;
 }
 
 .quadradao {
@@ -142,6 +185,7 @@ main{
   background-color: white;
   padding: 20px;
   border-radius: 14px;
+
 }
 
 .footer {

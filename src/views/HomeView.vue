@@ -197,6 +197,8 @@ export default {
 
 #shop .catalogo {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   flex-wrap: wrap;
   gap: 25px;
   padding: 40px 150px 75px;
