@@ -33,7 +33,7 @@
             <p>Livro:</p>
           </div>
           <div class="comantario">
-            <textarea  id="desc" cols="60" rows="5" placeholder="Escreva aqui..."></textarea>
+            <textarea  id="desc" cols="40" rows="5" placeholder="Escreva aqui..."></textarea>
           </div>
         </div>
         <div class="boxComentarios">
@@ -42,7 +42,7 @@
             <p>Livro:</p>
           </div>
           <div class="comantario">
-            <textarea  id="desc" cols="60" rows="5" placeholder="Escreva aqui..."></textarea>
+            <textarea  id="desc" cols="40" rows="5" placeholder="Escreva aqui..."></textarea>
           </div>
         </div>
         <div class="boxComentarios">
@@ -51,7 +51,7 @@
             <p>Livro:</p>
           </div>
           <div class="comantario">
-            <textarea  id="desc" cols="60" rows="5" placeholder="Escreva aqui..."></textarea>
+            <textarea  id="desc" cols="40" rows="5" placeholder="Escreva aqui..."></textarea>
           </div>
         </div>
       </div>
@@ -108,7 +108,7 @@ import LivroComponent from '../components/LivroComponent.vue';
   padding: 20px;
   background-color: rgb(95, 114, 217); ;
   margin-top: 10px; 
-  background: linear-gradient(135deg, rgb(81, 104, 235) 0%, #e0e0e0 120%);;
+  background: linear-gradient(135deg, rgba(93,110,201,1) 0%, #e0e0e0 120%);
 }
 
 main{
@@ -130,7 +130,7 @@ main{
   justify-content: center;
   align-items: center;
   margin-bottom: 40px;
-  background: rgb(95, 114, 217);
+  background-color: rgba(93,110,201,1);
 }
 
 .quadradao {
