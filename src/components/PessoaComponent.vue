@@ -1,7 +1,7 @@
 <template>
   <div class="pessoa">
     <div class="img">
-      <img :src="imgSrc" alt="imgPessoa">
+      <img src="../assets/img/login.svg" alt="imgPessoa">
     </div>
     <div class="nomePessoa">
       <h1>Nome:</h1>

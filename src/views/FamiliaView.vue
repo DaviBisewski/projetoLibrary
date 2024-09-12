@@ -25,12 +25,12 @@
       </section>
       <div class="mainComentarios">
         <div class="title">
-          <h1 class="members-label">Comentarios da Familia:</h1>
+          <h1 class="members-label">Comentários da Família:</h1>
         </div>
         <div class="boxComentarios">
           <div class="infosComentarios">
             <p>Nome:</p>
-            <p>CPF:</p>
+            <p>Livro:</p>
           </div>
           <div class="comantario">
             <textarea  id="desc" cols="60" rows="5" placeholder="Escreva aqui..."></textarea>
@@ -39,7 +39,7 @@
         <div class="boxComentarios">
           <div class="infosComentarios">
             <p>Nome:</p>
-            <p>CPF:</p>
+            <p>Livro:</p>
           </div>
           <div class="comantario">
             <textarea  id="desc" cols="60" rows="5" placeholder="Escreva aqui..."></textarea>
@@ -48,7 +48,7 @@
         <div class="boxComentarios">
           <div class="infosComentarios">
             <p>Nome:</p>
-            <p>CPF:</p>
+            <p>Livro:</p>
           </div>
           <div class="comantario">
             <textarea  id="desc" cols="60" rows="5" placeholder="Escreva aqui..."></textarea>
@@ -66,6 +66,7 @@ import LivroComponent from '../components/LivroComponent.vue';
 </script>
 
 <style scoped>
+
 #desc{
   padding: 10px;
   border-radius: 10px;
@@ -105,13 +106,14 @@ import LivroComponent from '../components/LivroComponent.vue';
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background-color: #f6f7fb;
+  background-color: rgb(95, 114, 217); ;
   margin-top: 10px; 
+  background: linear-gradient(135deg, rgb(81, 104, 235) 0%, #e0e0e0 120%);;
 }
 
 main{
-  background-color: rgb(95, 114, 217);
-  border-radius:0 0 10px 10px;
+  background-color: rgba(93,110,201,1);
+  border-radius:0px 10px 10px 10px;
   padding: 20px 0;
 }
 
@@ -128,7 +130,7 @@ main{
   justify-content: center;
   align-items: center;
   margin-bottom: 40px;
-  background-color: rgb(95, 114, 217);
+  background: rgb(95, 114, 217);
 }
 
 .quadradao {

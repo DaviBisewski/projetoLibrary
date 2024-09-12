@@ -15,7 +15,7 @@
   flex-direction: column;
   align-items: center;
   background-color: rgb(95, 114, 217);
-  border-radius: 15px 15px 0 0;
+  
 }
 
 .title {
@@ -23,11 +23,10 @@
   flex-direction: column;
   align-items: center;
   min-width: 750px;
-  border-radius: 15px;
   height: auto;
   padding: 60px;
   text-align: center;
-  border: 1px solid #fff;
+  border-bottom: 1px solid #fff;
 }
 
 .title h1 {
