@@ -1,9 +1,9 @@
 <template>
     <header id="header">
         <div class="redes-sociais">
-            <a href="https://www.instagram.com/grupolivrariascuritiba/" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
-            <a href="https://is.gd/cK92I3" target="_blank"><ion-icon name="mail-outline"></ion-icon></a>
-            <a href="https://api.whatsapp.com/send/?phone=554133305191" target="_blank"><ion-icon name="call-outline"></ion-icon></a>
+            <a href="https://www.instagram.com/grupolivrariascuritiba/" target="_blank"><img src="../assets/img/logo-instagram.svg"></a>
+            <a href="https://is.gd/cK92I3" target="_blank"><img src="../assets/img/mail-outline.svg"></a>
+            <a href="https://api.whatsapp.com/send/?phone=554133305191" target="_blank"><img src="../assets/img/call-outline.svg"></a>
         </div>
         <div class="container">
             <div class="header-main">
@@ -17,21 +17,21 @@
                         <li class="list">
                             <span class="indicator"></span>
                             <router-link to="/familia">
-                                <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                                <span class="icon"><img src="../assets/img/familia.svg" alt="logo-familia"></span>
                                 <span class="text">Família</span>
                             </router-link>
                         </li>
                         <li class="list">
                             <span class="login"></span>
                             <button @click="toggleComponent" class="nav-button">
-                                <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                                <span class="icon"><img src="../assets/img/person-outline.svg" alt="logo-login"></span>
                                 <span class="text">Login</span>
                             </button>
                         </li>
                         <li class="list">
                             <span class="indicator"></span>
                             <router-link to="/emprestimos">
-                                <span class="icon"><ion-icon name="book-outline"></ion-icon></span>
+                                <span class="icon"><img src="../assets/img/emprestimos.svg" alt="logo-emprestimos"></span>
                                 <span class="text">Empréstimos</span>
                             </router-link>
                         </li>
@@ -47,11 +47,10 @@
 
 <script>
 import LogInView from './LogInView.vue';
-
 export default {
     name: 'Header',
     components: {
-        LogInView
+        LogInView,
     },
     data() {
         return {
@@ -62,7 +61,7 @@ export default {
         toggleComponent() {
             this.componenteAtivo = !this.componenteAtivo;
         }
-    }
+    },
 }
 </script>
 
@@ -106,6 +105,10 @@ background: linear-gradient(90deg, rgba(70,93,219,1) 0%, rgba(93,110,201,1) 50%,
     background: rgb(70,93,219);
 background: linear-gradient(90deg, rgba(70,93,219,1) 0%, rgba(93,110,201,1) 50%, rgba(70,93,219,1) 100%);
     background-color: #e7e7e7;
+}
+
+#header .redes-sociais a img{
+    width: 20px;
 }
 
 .header-main {
@@ -181,6 +184,7 @@ background: linear-gradient(90deg, rgba(70,93,219,1) 0%, rgba(93,110,201,1) 50%,
     text-align: center;
     transition: .5s;
     color: #0D0D0D;
+    content: "";
 }
 
 .nav ul li:hover a .icon,
@@ -205,6 +209,10 @@ background: linear-gradient(90deg, rgba(70,93,219,1) 0%, rgba(93,110,201,1) 50%,
     opacity: 1;
     transform: translateY(10px);
     font-size: 1rem; 
+}
+
+.nav ul li a .icon img, .nav ul li button .icon img {
+    width: 30px;
 }
 
 .indicator {
